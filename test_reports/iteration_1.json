@@ -1,0 +1,21 @@
+{
+  "summary": "Frontend-only navigation & rendering tests for Samarpan Hospital marketing site. All 20 checks passed: home page loads, header nav (About/Services/Journal) routes correctly, Services page shows exactly 8 service-detail cards, Blog list shows featured + 2 cards, all 3 blog post slugs render with multiple post-blocks, related links and back link work, home blog cards (0/1/2) navigate to correct posts, breadcrumb Home returns to /, and direct URL access works for /about, /services, /blog and /blog/<slug>.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Global (framer-motion)", "issues": ["Console warning: 'motion() is deprecated. Use motion.create() instead.' Non-blocking, but should be migrated to motion.create() to be future-proof."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": ["(Optional) Migrate framer-motion usage from motion(...) to motion.create(...) to eliminate deprecation warnings."],
+  "critical_code_review_comments": ["No functional issues found. Only cosmetic deprecation warning from framer-motion."],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100% (20/20 checks passed)"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Site is a static marketing website. All navigation flows verified via Playwright using data-testid selectors defined in the review request. 3 blog slugs verified: seven-habits-that-protect-your-heart, when-a-headache-is-more-than-a-headache, the-quiet-science-of-a-good-nights-sleep.",
+  "rca of the issue": "N/A - no issues"
+}
