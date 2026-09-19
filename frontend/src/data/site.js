@@ -94,6 +94,7 @@ export const DOCTORS = [
     qualification: "MBBS, Specialization in Critical Care",
     quote: "The heart heals faster when the human behind it is heard.",
     years: "5+ yrs",
+    timing: "09:00 AM – 11:00 AM; 06:00 PM – 08:00 PM",
     image:
       "/ChatGPT Image Jul 19, 2026, 11_01_42 PM.png",
   },
@@ -103,24 +104,49 @@ export const DOCTORS = [
     qualification: "MBBS, MS, MCH",
     quote: "Every minute matters — so does every question you have.",
     years: "9+ yrs",
+    honor: "Gold Medalist",
+    timing: "10:00 AM – 01:00 PM; 05:00 PM – 07:00 PM",
     image:
       "/ChatGPT Image Jul 19, 2026, 11_05_51 PM.png",
   },
   {
-    name: "Dr. Priya Sethi",
-    speciality: "Obstetrics & Fetal Medicine",
-    quote: "We tend to two lives — with equal tenderness for both.",
-    years: "15 yrs",
-    image:
-      "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=940&q=80",
+    name: "Dr Vijay Lakshmi",
+    speciality: "General Physician",
+    qualification: "MBBS, MS, MD",
+    quote: "Thoughtful care and clear guidance help patients feel safe and heard.",
+    years: "3 yrs",
+    honor: "Gold Medalist",
+    timing: "09:30 AM – 12:30 PM; 06:30 PM – 08:00 PM",
+    image: "/ChatGPT Image Aug 4, 2026, 10_30_59 PM.png",
   },
   {
-    name: "Dr. Rohan Kulkarni",
-    speciality: "Orthopedic Surgery",
-    quote: "Recovery is a craft. We rebuild movement, one honest step at a time.",
-    years: "16 yrs",
-    image:
-      "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=940&q=80",
+    name: "Dr. Shardul Singh",
+    speciality: "ENT Specialist",
+    qualification: "MBBS, MS",
+    quote: "Clear hearing and breathing care can transform everyday life.",
+    years: "9+ yrs",
+    timing: "09:00 AM – 11:00 AM; 06:00 PM – 08:00 PM",
+    image: "/galary/ChatGPT Image Sep 18, 2026, 11_42_44 PM.png",
+  },
+  {
+    name: "Dr. Sharat Mathur",
+    speciality: "General Surgeon",
+    qualification: "MBBS, MS",
+    quote: "Careful surgical planning leads to better outcomes and faster recovery.",
+    years: "12+ yrs",
+    timing: "11:00 AM – 02:00 PM; 04:00 PM – 06:00 PM",
+    image: "/galary/ChatGPT Image Sep 18, 2026, 10_59_45 PM.png",
+  },
+  {
+    name: "Dr. Pradeep Kumawat",
+    speciality: "Orthopedic Surgeon",
+    qualification: "MBBS, MS Orthopaedics, Gold Medalist",
+    quote: "Trauma care and joint restoration require precision, patience, and trust.",
+    years: "10+ yrs",
+    honor: "Gold Medalist",
+    timing: "10:00 AM – 01:00 PM; 05:00 PM – 07:00 PM",
+    focus: "Trauma Specialist · Ligament Tear Care · Ilizarov",
+    image: "/galary/ChatGPT Image Sep 18, 2026, 11_39_45 PM.png",
   },
 ];
 
@@ -251,105 +277,181 @@ export const TESTIMONIALS = [
 export const BLOG = [
   {
     slug: "seven-habits-that-protect-your-heart",
-    title: "Seven small habits that quietly protect your heart",
-    tag: "Cardiology",
-    date: "12 Nov 2025",
-    read: "6 min",
-    author: "Dr. Ananya Rao",
-    authorRole: "Interventional Cardiology",
+    title: "Best Neurosurgeon in Ajmer? Meet Dr. Praveen Kumar Gupta – Expert Neuro & Spine Surgeon at Samarpan Hospital",
+    metaTitle: "Best Neurosurgeon in Ajmer | Dr. Praveen Kumar Gupta | Samarpan Hospital",
+    metaDescription:
+      "Looking for the best neurosurgeon in Ajmer? Meet Dr. Praveen Kumar Gupta, Neuro & Spine Surgeon at Samarpan Hospital for brain surgery, spine surgery, stroke, trauma and advanced neurosurgical care.",
+    tag: "Neurology",
+    date: "20 Jul 2026",
+    read: "8 min",
+    author: "Dr. Praveen Kumar Gupta",
+    authorRole: "Neuro & Spine Surgeon",
     excerpt:
-      "The biggest wins in heart health rarely come from dramatic changes. They come from small, repeatable habits — practised on the days you don't feel like it.",
+      "If you are searching for the best neurosurgeon in Ajmer, you are likely looking for more than just qualifications. You want experience, precision and a doctor you can trust when it matters most.",
     image:
-      "https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwbGlmZXN0eWxlJTIwbmF0dXJlfGVufDB8fHx8MTc4MzE4ODg5M3ww&ixlib=rb-4.1.0&q=85",
+      "/galary/IMG_4429 blog.PNG",
     content: [
       {
-        heading: "Heart health is a rhythm, not a rescue",
-        body: "Most people meet their cardiologist during a crisis. But the heart is a patient organ — it responds far more to what you do on ordinary Tuesdays than to any single heroic effort. At Samarpan, the cases with the best long-term outcomes almost always share the same quiet foundation: consistency.",
+        heading: "Looking for the Best Neurosurgeon in Ajmer? Meet Dr. Praveen Kumar Gupta",
+        body: "Dr. Praveen Kumar Gupta (MBBS, MS, M.Ch Neurosurgery) is a Neuro and Spine Surgeon at Samarpan Neuro Spine and Multispeciality Hospital, Ajmer, with experience in advanced brain and spine surgery. He is known for treating complex neurological conditions including brain tumors, spinal disorders, stroke, traumatic brain injuries and minimally invasive spine conditions. Public profiles list his experience in brain trauma surgery, complex brain and spine surgery, vascular compression syndromes and epilepsy surgery.",
       },
       {
-        heading: "1. Walk before you scroll",
-        body: "A brisk 20-minute walk within an hour of waking sets your blood pressure and mood for the whole day. It doesn't need to be a workout — it needs to be a habit your body can rely on.",
+        heading: "Why patients choose Dr. Praveen Kumar Gupta",
+        body: "When facing a neurological condition, patients often look for a surgeon with specialized training, modern surgical techniques and access to emergency care. At Samarpan Neuro Spine and Multispeciality Hospital, Dr. Praveen Kumar Gupta works alongside a multidisciplinary team in a hospital that provides 24x7 emergency services, trauma care, ICU support and modular operation theatres, enabling comprehensive care for neuro and spine patients.",
       },
       {
-        heading: "2. Salt is a whisper, not a shout",
-        body: "Most excess sodium hides in packaged food, not the salt shaker. Reading one label a day slowly retrains your palate — and within weeks, food that once tasted normal will taste over-salted.",
+        heading: "Conditions treated",
+        body: "Patients from Ajmer and nearby areas commonly consult for brain tumors, slip disc, sciatica, cervical spondylosis, brain stroke, head injury, brain hemorrhage, spinal cord injury, neck pain, chronic back pain, hydrocephalus, trigeminal neuralgia, epilepsy, brain trauma and spine trauma.",
       },
       {
-        heading: "3. Sleep is cardiac medicine",
-        body: "Blood pressure is meant to dip at night. Broken sleep removes that recovery window. Protecting a consistent 7-hour sleep block is one of the most under-rated interventions in cardiology.",
+        heading: "Advanced Neuro and Spine treatments in Ajmer",
+        body: "Dr. Praveen Kumar Gupta provides evaluation and surgical management for a wide range of neurological and spinal conditions, including microscopic brain surgery, endoscopic spine surgery, brain tumor surgery, spine surgery, neuro trauma surgery, stroke evaluation, spinal decompression surgery and complex brain and spine surgery. His publicly listed areas of expertise include brain trauma surgery, brain tumor surgery, complex brain and spine surgery, craniovertebral junction disorders and epilepsy surgery.",
       },
       {
-        heading: "4. Know your numbers by name",
-        body: "Blood pressure, LDL cholesterol, fasting sugar and waist circumference. Four numbers. Knowing them turns anxiety into a plan — and a plan is always calmer than a fear.",
+        heading: "When should you visit a neurosurgeon?",
+        body: "You should seek a neurosurgical consultation if you experience persistent neck or back pain, weakness in the arms or legs, numbness or tingling, difficulty walking, sudden severe headache, frequent seizures, slip disc symptoms, head injury after an accident, loss of balance or brain tumor symptoms. If symptoms suggest a stroke or severe head injury, seek emergency care immediately.",
       },
       {
-        heading: "When to see us",
-        body: "Chest heaviness on exertion, breathlessness climbing familiar stairs, or a fluttering heartbeat that lingers — these are conversations worth having early. Our cardiology team keeps same-week slots for exactly these worries.",
+        heading: "Why choose Samarpan Hospital for Neuro and Spine care in Ajmer?",
+        body: "Patients searching for the best neuro hospital in Ajmer often look for more than a doctor. They want a hospital equipped to manage emergencies and complex surgeries. Samarpan Hospital offers 24x7 emergency and trauma care, neuro and spine surgery, modular operation theatres, ICU and critical care, brain microscope technology, endoscopic spine surgery instruments, ambulance services, orthopaedics and joint replacement, general surgery, ENT, gynecology, and in-house pharmacy and laboratory. The hospital operates 24 hours a day and has strong patient ratings on local business platforms.",
+      },
+      {
+        heading: "Frequently asked questions",
+        body: "Who is a leading Neuro and Spine Surgeon in Ajmer? Dr. Praveen Kumar Gupta is an M.Ch-qualified Neuro and Spine Surgeon practicing at Samarpan Hospital, Ajmer, with expertise in brain trauma, brain tumors, complex brain and spine surgery and related neurosurgical conditions. Does Dr. Praveen Kumar Gupta treat slip disc? Yes, he evaluates and manages spinal disorders including slip disc and other conditions affecting the spine, depending on the patient's diagnosis. Does Samarpan Hospital provide emergency treatment for head injuries? Yes, Samarpan Hospital provides 24x7 emergency and trauma care, including treatment pathways for neurological emergencies.",
       },
     ],
   },
   {
     slug: "when-a-headache-is-more-than-a-headache",
-    title: "When a headache is more than a headache — a neurologist explains",
-    tag: "Neurology",
-    date: "28 Oct 2025",
-    read: "4 min",
-    author: "Dr. Vikram Menon",
-    authorRole: "Neurology & Stroke Care",
+    title:
+      "Best Trauma Centre in Ajmer: Why Patients Choose Samarpan Neuro Spine & Multispeciality Hospital",
+    metaTitle:
+      "Best Trauma Centre in Ajmer | 24×7 Emergency & Accident Care | Samarpan Hospital",
+    metaDescription:
+      "Looking for the best Trauma Centre in Ajmer? Samarpan Neuro Spine & Multispeciality Hospital provides 24×7 emergency care, accident treatment, head injury management, fracture care and trauma surgery.",
+    tag: "Trauma Care",
+    date: "04 Aug 2026",
+    read: "6 min",
+    author: "Hyperlane.in",
+    authorRole: "Content Team",
     excerpt:
-      "Nearly everyone gets headaches. The art is knowing which ones deserve a phone call — and which ones deserve an ambulance.",
+      "When a medical emergency or road accident happens, every minute matters. Choosing the right hospital can make all the difference.",
     image:
-      "https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=940&q=80",
+      "/galary/IMG_4430 blog1.PNG",
     content: [
       {
-        heading: "Most headaches are honest",
-        body: "The vast majority of headaches — tension, dehydration, screen strain, a skipped meal — are uncomfortable but benign. They resolve with rest, water and time. Understanding this baseline is what makes the exceptions easier to spot.",
+        heading: "Looking for the Best Trauma Centre in Ajmer?",
+        body: "When a medical emergency or road accident happens, every minute matters. Choosing the right hospital can make all the difference. Samarpan Neuro Spine & Multispeciality Hospital has become a trusted destination for patients seeking 24×7 emergency and trauma care in Ajmer. With a dedicated trauma team, emergency services, ICU support, modular operation theatres and advanced neuro-spine expertise, the hospital is equipped to manage serious injuries and critical emergencies. The hospital is open 24×7 and receives strong patient ratings on local platforms.",
       },
       {
-        heading: "The headaches that change the rules",
-        body: "A 'thunderclap' headache that peaks within seconds. A headache with weakness, slurred speech or a drooping face. The worst headache of your life, arriving out of nowhere. These are not wait-and-watch symptoms — they are reasons to call our emergency line immediately.",
+        heading: "Why Many Patients Choose Samarpan Hospital",
+        body: "Trauma care is not just about emergency treatment. It is about having the right specialists, surgical facilities and critical care available without delay. At Samarpan Hospital, patients have access to 24×7 emergency and trauma services, neuro and spine surgery, orthopaedic and fracture care, general surgery, critical care ICU, modular operation theatres, ambulance support, advanced brain microscope technology and endoscopic spine surgery equipment. These services allow the hospital to manage a wide range of accident-related and emergency conditions.",
       },
       {
-        heading: "The golden hour is real",
-        body: "In stroke, time is brain tissue. Our stroke-ready ER is built to move a patient from door to scan to treatment within minutes, because every delay narrows the window in which recovery is possible.",
+        heading: "Trauma Emergencies We Treat",
+        body: "Samarpan Hospital provides emergency evaluation and treatment for road traffic accidents, head injuries, brain trauma, spine injuries, multiple fractures, bone and joint injuries, sports injuries, neck injuries, pelvic injuries, soft tissue trauma, internal injuries and emergency general surgery cases.",
       },
       {
-        heading: "Keep a simple headache diary",
-        body: "Note when headaches arrive, what preceded them, and what helped. Two weeks of notes tells a neurologist more than an hour of guessing — and often reveals a trigger you can simply remove.",
+        heading: "Advanced Neuro Trauma Care in Ajmer",
+        body: "One of the biggest strengths of Samarpan Hospital is its neuro and spine department. Patients with severe head injuries, brain trauma, spinal cord injuries or neurological emergencies benefit from coordinated care involving neurosurgery, trauma management and critical care under one roof. This integrated approach is especially important during the golden hour, when rapid assessment and timely intervention can influence recovery.",
+      },
+      {
+        heading: "24×7 Emergency Hospital in Ajmer",
+        body: "Medical emergencies do not wait. That is why Samarpan Hospital provides round-the-clock emergency services for patients requiring immediate medical attention, including road accidents, head injuries, stroke symptoms, severe back and spine injuries, multiple fractures, emergency surgery and critical illness. The hospital operates 24 hours a day and provides emergency hospital services in Ajmer.",
+      },
+      {
+        heading: "Modern Trauma Infrastructure",
+        body: "To support emergency and trauma care, Samarpan Hospital offers modular operation theatres, ICU and critical care, advanced brain microscope technology, endoscopic spine surgery instruments, ambulance services, in-house pharmacy, diagnostic support and an experienced emergency team.",
+      },
+      {
+        heading: "Why Early Trauma Care Saves Lives",
+        body: "Many serious injuries may not show obvious symptoms immediately. Immediate medical attention is essential if someone experiences loss of consciousness, severe bleeding, head injury, difficulty moving arms or legs, severe neck pain, chest injury, difficulty breathing, suspected spinal injury or multiple fractures. Prompt evaluation helps doctors identify life-threatening injuries and begin appropriate treatment as quickly as possible.",
+      },
+      {
+        heading: "Why Choose Samarpan Hospital for Trauma Care?",
+        body: "Patients across Ajmer trust Samarpan Hospital because it combines emergency care with specialist treatment. The hospital offers 24×7 emergency services, dedicated trauma care, neuro and spine specialists, orthopaedic and fracture care, ICU and critical care, advanced surgical technology, patient-centred treatment and comprehensive multispeciality support.",
+      },
+      {
+        heading: "Frequently Asked Questions",
+        body: "",
+      },
+      {
+        heading: "Which is a trusted trauma centre in Ajmer?",
+        body: "Samarpan Neuro Spine & Multispeciality Hospital provides 24×7 emergency and trauma services, including care for road accidents, fractures, head injuries and critical emergencies.",
+      },
+      {
+        heading: "Does Samarpan Hospital provide 24×7 emergency services?",
+        body: "Yes. The hospital operates 24 hours a day and offers emergency and trauma care.",
+      },
+      {
+        heading: "Can Samarpan Hospital treat head injuries and spine trauma?",
+        body: "Yes. The hospital has dedicated neuro and spine services along with emergency, trauma and critical care facilities for neurological and spinal injuries.",
       },
     ],
   },
   {
     slug: "the-quiet-science-of-a-good-nights-sleep",
-    title: "The quiet science of a good night's sleep",
-    tag: "Wellness",
-    date: "04 Oct 2025",
-    read: "5 min",
-    author: "Dr. Priya Sethi",
-    authorRole: "Preventive & Wellness Medicine",
+    title: "Best Hospital in Ajmer: Why Families Trust Samarpan Neuro Spine & Multispeciality Hospital",
+    metaTitle:
+      "Best Hospital in Ajmer | Best Multi Speciality Hospital in Ajmer | Samarpan Hospital",
+    metaDescription:
+      "Looking for the best hospital in Ajmer? Samarpan Neuro Spine & Multispeciality Hospital offers Neuro & Spine Surgery, Trauma Care, Orthopaedics, General Surgery, ENT, Gynecology and 24×7 Emergency Services.",
+    tag: "Hospital Care",
+    date: "04 Aug 2026",
+    read: "7 min",
+    author: "Hyperlane.in",
+    authorRole: "Content Team",
     excerpt:
-      "Sleep is not the absence of activity. It is one of the most active, restorative processes your body performs — and most of us treat it as optional.",
+      "Finding the right hospital is one of the most important healthcare decisions for you and your family.",
     image:
-      "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=940&q=80",
+      "/galary/IMG_4431 blog2.PNG",
     content: [
       {
-        heading: "What actually happens when you sleep",
-        body: "Overnight, your brain clears metabolic waste, consolidates memory, and rebalances the hormones that govern hunger and stress. Poor sleep doesn't just make you tired — it quietly raises blood sugar, blood pressure and appetite the very next day.",
+        heading: "Looking for the Best Hospital in Ajmer? Welcome to Samarpan Neuro Spine & Multispeciality Hospital",
+        body: "Finding the right hospital is one of the most important healthcare decisions for you and your family. Whether it's an emergency, advanced surgery or routine consultation, patients often search for the best hospital in Ajmer that combines experienced doctors, modern technology and compassionate care. Samarpan Neuro Spine & Multispeciality Hospital is a trusted multi speciality hospital in Ajmer offering expert care across Neuro & Spine Surgery, Trauma & Emergency Care, Orthopaedics, General Surgery, ENT, Gynecology, Critical Care and more. The hospital operates 24×7 and serves patients from Ajmer, Pushkar, Beawar, Kishangarh, Nasirabad and nearby areas.",
       },
       {
-        heading: "Light is the master switch",
-        body: "Your body clock takes its cues from light. Morning sunlight anchors your rhythm; late-night screens confuse it. A dim hour before bed does more for sleep than any supplement.",
+        heading: "Why Patients Searching for the Best Hospital in Ajmer Choose Samarpan Hospital",
+        body: "Healthcare is about more than treatment—it is about timely diagnosis, experienced specialists and comprehensive care under one roof. At Samarpan Hospital, patients benefit from 24×7 Emergency & Trauma Services, Advanced Neuro & Spine Surgery, Orthopaedic & Joint Replacement Care, General Surgery, ENT Services, Gynecology & Women's Health, Critical Care ICU, Modular Operation Theatres, Advanced Diagnostic Support, In-house Pharmacy and Ambulance Services.",
       },
       {
-        heading: "The 3-2-1 wind-down",
-        body: "No heavy food three hours before bed, no work two hours before, no screens one hour before. It sounds strict, but it hands your nervous system the runway it needs to actually land.",
+        heading: "Best Multi Speciality Hospital in Ajmer for Comprehensive Healthcare",
+        body: "Unlike hospitals that focus on a single department, Samarpan Hospital brings multiple specialties together so patients can receive coordinated treatment from experienced doctors without visiting different hospitals. Our major specialties include Neuro & Spine Surgery, Trauma & Emergency Care, Orthopaedics, Joint Replacement Surgery, General Surgery, ENT, Gynecology, Critical Care, General Medicine and Urology.",
       },
       {
-        heading: "When to seek help",
-        body: "Loud snoring with gasping, waking unrefreshed despite enough hours, or persistent insomnia beyond a few weeks deserve evaluation. Our sleep clinic can distinguish a habit problem from a medical one — and the difference matters.",
+        heading: "Advanced Neuro & Spine Care in Ajmer",
+        body: "Samarpan Hospital is recognized for its strong focus on Neuro & Spine care. Patients with conditions such as Brain Tumors, Stroke, Head Injury, Slip Disc, Sciatica, Cervical Spondylosis, Spine Trauma and Brain Hemorrhage can receive specialist evaluation and treatment from the Neuro & Spine team using advanced surgical techniques and dedicated equipment.",
+      },
+      {
+        heading: "24×7 Emergency & Trauma Care",
+        body: "Medical emergencies require immediate attention. Samarpan Hospital provides round-the-clock emergency services for Road Accidents, Head Injuries, Spine Injuries, Fractures, Severe Pain, Stroke Symptoms, Emergency General Surgery and Critical Medical Emergencies. The hospital is open 24 hours a day and offers emergency services for patients requiring urgent medical attention.",
+      },
+      {
+        heading: "Modern Infrastructure for Better Patient Care",
+        body: "Quality healthcare depends on both skilled doctors and the right infrastructure. Samarpan Hospital offers Modular Operation Theatres, ICU & Critical Care, Brain Microscope Technology, Endoscopic Spine Surgery Instruments, Advanced Patient Monitoring, Ambulance Support, In-house Pharmacy and Diagnostic Services. Patients visiting Samarpan Hospital receive care from specialists across multiple departments, ensuring faster diagnosis, coordinated treatment plans and comprehensive medical care without unnecessary referrals.",
+      },
+      {
+        heading: "Serving Patients Beyond Ajmer",
+        body: "Samarpan Hospital proudly serves patients from Ajmer, Pushkar, Beawar, Kishangarh, Nasirabad, Kekri, Bhilwara, Nagaur, Pali and Jaipur for selected referrals. Many families choose the hospital for advanced neuro, spine and trauma care close to home.",
+      },
+      {
+        heading: "Why Choose Samarpan Hospital?",
+        body: "Trusted Multi Speciality Hospital in Ajmer, 24×7 Emergency & Trauma Care, Advanced Neuro & Spine Surgery, Orthopaedic & Joint Replacement Care, Modular Operation Theatres, ICU & Critical Care, Experienced Specialist Doctors, Modern Medical Technology and Patient-Centred Treatment.",
+      },
+      {
+        heading: "Which is a trusted multi speciality hospital in Ajmer?",
+        body: "Samarpan Neuro Spine & Multispeciality Hospital provides multi speciality services including Neuro & Spine Surgery, Orthopaedics, Trauma Care, General Surgery, ENT and Gynecology with 24×7 emergency support.",
+      },
+      {
+        heading: "Does Samarpan Hospital provide 24×7 emergency services?",
+        body: "Yes. Samarpan Hospital operates 24 hours a day and provides emergency and trauma care for accidents and critical medical conditions.",
+      },
+      {
+        heading: "What specialties are available at Samarpan Hospital?",
+        body: "The hospital provides Neuro & Spine Surgery, Trauma Care, Orthopaedics, General Surgery, ENT, Gynecology, General Medicine, Critical Care and Urology.",
       },
     ],
-  },
+  }, 
 ];
 
 export const ACCREDITATIONS = [

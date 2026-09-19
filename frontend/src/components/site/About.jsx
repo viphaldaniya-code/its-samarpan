@@ -33,7 +33,7 @@ export const About = () => {
             className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-xl"
           >
             <img
-              src="https://images.unsplash.com/photo-1517120026326-d87759a7b63b?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
+              src="/IMG_440222.PNG"
               alt="Nurse walking with patient"
               className="w-full h-full object-cover"
             />
@@ -46,7 +46,7 @@ export const About = () => {
             className="hidden md:block absolute -right-6 -bottom-8 w-[52%] rounded-3xl overflow-hidden aspect-square shadow-2xl border-4 border-white"
           >
             <img
-              src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=700&q=80"
+              src="/ChatGPT Image Aug 4, 2026, 11_07_51 PM.png"
               alt="Doctor and patient in consultation"
               className="w-full h-full object-cover"
             />

@@ -97,7 +97,7 @@ export const Hero = () => {
               <span>Ajmer, Rajasthan</span>
             </div>
             <span className="divider-dot" />
-            <span>27 years of quiet excellence</span>
+            <span>5+ years of quiet excellence</span>
           </motion.div>
         </div>
 

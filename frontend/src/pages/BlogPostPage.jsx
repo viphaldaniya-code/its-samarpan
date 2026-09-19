@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight, Clock, Calendar } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
@@ -8,6 +9,23 @@ export default function BlogPostPage() {
   const { slug } = useParams();
   const post = BLOG.find((b) => b.slug === slug);
   const others = BLOG.filter((b) => b.slug !== slug).slice(0, 2);
+
+  useEffect(() => {
+    if (!post) return;
+
+    document.title = post.metaTitle || post.title;
+
+    const description = post.metaDescription || post.excerpt || "";
+    let metaTag = document.querySelector('meta[name="description"]');
+
+    if (!metaTag) {
+      metaTag = document.createElement("meta");
+      metaTag.setAttribute("name", "description");
+      document.head.appendChild(metaTag);
+    }
+
+    metaTag.setAttribute("content", description);
+  }, [post]);
 
   if (!post) {
     return (

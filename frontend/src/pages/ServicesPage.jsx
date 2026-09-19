@@ -1,13 +1,21 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   HeartPulse, Brain, Bone, Ribbon, Baby, Flower2, Siren, Microscope,
   Stethoscope, Ear, Scissors, Activity,
-  ArrowUpRight, Clock, ShieldCheck,
+  ArrowUpRight, Clock, ShieldCheck, UserRound, BriefcaseMedical,
 } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { PageHero } from "@/components/site/PageHero";
-import { Contact } from "@/components/site/Contact";
-import { SERVICES } from "@/data/site";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { SERVICES, DOCTORS, HOSPITAL } from "@/data/site";
 
 const iconMap = {
   HeartPulse, Brain, Bone, Ribbon, Baby, Flower2, Siren, Microscope,
@@ -20,9 +28,112 @@ const approach = [
   { icon: ShieldCheck, t: "Transparent, ethical care", d: "No unnecessary tests, no surprise bills. Every recommendation is explained and justified." },
 ];
 
-export default function ServicesPage() {
+const serviceDoctorMap = {
+  neuro: "Dr. Praveen Kumar Gupta",
+  trauma: "Dr. Sarvan Yadav",
+  ortho: "Dr. Pradeep Kumawat",
+  medicine: "Dr Vijay Lakshmi",
+  ent: "Dr. Shardul Singh",
+  surgery: "Dr. Sharat Mathur",
+  icu: "Dr. Sarvan Yadav",
+};
+
+function ServiceDoctorModal({ doctor, open, onOpenChange }) {
+  if (!doctor) return null;
+
   return (
-    <PageLayout testid="services-page">
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="overflow-hidden p-0 sm:max-w-2xl">
+        <div className="grid gap-0 sm:grid-cols-[220px_1fr]">
+          <div className="bg-pearl">
+            <img
+              src={doctor.image}
+              alt={doctor.name}
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
+
+          <div className="p-6">
+            <DialogHeader className="mb-4 text-left">
+              <DialogTitle className="text-2xl font-display text-foreground">
+                {doctor.name}
+              </DialogTitle>
+              <DialogDescription className="text-base text-brand font-medium">
+                {doctor.speciality}
+              </DialogDescription>
+            </DialogHeader>
+
+            <div className="space-y-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <BriefcaseMedical className="h-4 w-4 text-brand" />
+                <span>{doctor.qualification}</span>
+              </div>
+              {doctor.honor ? (
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
+                    {doctor.honor}
+                  </span>
+                </div>
+              ) : null}
+              {doctor.focus ? (
+                <div className="flex items-center gap-2">
+                  <UserRound className="h-4 w-4 text-brand" />
+                  <span>{doctor.focus}</span>
+                </div>
+              ) : null}
+              {doctor.timing ? (
+                <div className="flex items-center gap-2 text-xs text-foreground/80">
+                  <Clock className="h-4 w-4 text-brand" />
+                  <span>{doctor.timing}</span>
+                </div>
+              ) : null}
+            </div>
+
+            <blockquote className="mt-5 rounded-2xl border border-brand/10 bg-brand/5 p-4 text-base italic text-foreground">
+              “{doctor.quote}”
+            </blockquote>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button asChild className="rounded-full bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-soft">
+                <a href={`tel:${HOSPITAL.phone}`}>Book Consultation</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+export default function ServicesPage() {
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Samarpan Hospital Speciality Departments",
+    "itemListElement": SERVICES.map((service, index) => ({
+      "@type": "MedicalBusiness",
+      "position": index + 1,
+      "name": service.title,
+      "description": service.body,
+      "medicalSpecialty": service.title,
+      "areaServed": "Ajmer, Rajasthan",
+      "parentOrganization": {
+        "@type": "Hospital",
+        "name": "Samarpan Hospital Ajmer",
+      },
+      "telephone": "+91-90572-74807",
+      "url": "https://www.samarpanhospitalajmer.in/services",
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <PageLayout testid="services-page">
       <PageHero
         crumb="Services"
         overline="Specialities"
@@ -41,6 +152,11 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((s, i) => {
               const Icon = iconMap[s.icon] || HeartPulse;
+              const matchedDoctor = serviceDoctorMap[s.key]
+                ? DOCTORS.find((doctor) => doctor.name === serviceDoctorMap[s.key])
+                : null;
+              const isClickable = Boolean(matchedDoctor);
+
               return (
                 <motion.div
                   key={s.key}
@@ -48,7 +164,24 @@ export default function ServicesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.6, delay: (i % 3) * 0.06 }}
-                  className="group rounded-3xl bg-white border border-brand/10 p-8 hover:border-brand/25 hover:shadow-xl hover:-translate-y-1 transition-all"
+                  className={`group rounded-3xl bg-white border border-brand/10 p-8 transition-all ${
+                    isClickable
+                      ? "cursor-pointer hover:border-brand/25 hover:shadow-xl hover:-translate-y-1"
+                      : "cursor-default"
+                  }`}
+                  onClick={isClickable ? () => setSelectedDoctor(matchedDoctor) : undefined}
+                  onKeyDown={
+                    isClickable
+                      ? (event) => {
+                          if (event.key === "Enter" || event.key === " ") {
+                            event.preventDefault();
+                            setSelectedDoctor(matchedDoctor);
+                          }
+                        }
+                      : undefined
+                  }
+                  role={isClickable ? "button" : undefined}
+                  tabIndex={isClickable ? 0 : undefined}
                   data-testid={`service-detail-${s.key}`}
                 >
                   <div className="w-12 h-12 rounded-2xl bg-brand/8 text-brand flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -69,13 +202,16 @@ export default function ServicesPage() {
                       ? "Open 24×7"
                       : "OPD: 10 AM–2 PM & 6–8 PM"}
                   </div>
-                  <a
-                    href="#contact"
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand"
-                  >
-                    <span>Consult this department</span>
-                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
+                  {matchedDoctor ? (
+                    <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                      <span>View specialist profile</span>
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
+                  ) : (
+                    <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground/70">
+                      <span>Department currently not staffed</span>
+                    </div>
+                  )}
                 </motion.div>
               );
             })}
@@ -119,7 +255,15 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <Contact />
+      <ServiceDoctorModal
+        doctor={selectedDoctor}
+        open={Boolean(selectedDoctor)}
+        onOpenChange={(open) => {
+          if (!open) setSelectedDoctor(null);
+        }}
+      />
+
     </PageLayout>
+    </>
   );
 }

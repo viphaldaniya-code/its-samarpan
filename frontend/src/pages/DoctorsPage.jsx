@@ -1,15 +1,137 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Quote, Stethoscope, Clock3, ArrowUpRight } from "lucide-react";
+import { Quote, Stethoscope, Clock3, ArrowUpRight, UserRound, BriefcaseMedical } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { PageHero } from "@/components/site/PageHero";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { DOCTORS, HOSPITAL } from "@/data/site";
 
+function DoctorProfileModal({ doctor }) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button
+          variant="outline"
+          className="mt-5 inline-flex items-center gap-2 rounded-full border-brand/30 bg-white text-brand hover:bg-brand/5"
+        >
+          <UserRound className="h-4 w-4" />
+          View Profile
+        </Button>
+      </DialogTrigger>
+
+      <DialogContent className="overflow-hidden p-0 sm:max-w-2xl">
+        <div className="grid gap-0 sm:grid-cols-[220px_1fr]">
+          <div className="bg-pearl">
+            <img
+              src={doctor.image}
+              alt={doctor.name}
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
+
+          <div className="p-6">
+            <DialogHeader className="mb-4 text-left">
+              <DialogTitle className="text-2xl font-display text-foreground">
+                {doctor.name}
+              </DialogTitle>
+              <DialogDescription className="text-base text-brand font-medium">
+                {doctor.speciality}
+              </DialogDescription>
+            </DialogHeader>
+
+            <div className="space-y-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <BriefcaseMedical className="h-4 w-4 text-brand" />
+                <span>{doctor.qualification}</span>
+              </div>
+              {doctor.honor ? (
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
+                    {doctor.honor}
+                  </span>
+                </div>
+              ) : null}
+              <div className="flex items-center gap-2">
+                <Clock3 className="h-4 w-4 text-brand" />
+                <span>{doctor.years} of experience</span>
+              </div>
+              {doctor.timing ? (
+                <div className="flex items-center gap-2 text-xs text-foreground/80">
+                  <Clock3 className="h-4 w-4 text-brand" />
+                  <span>{doctor.timing}</span>
+                </div>
+              ) : null}
+            </div>
+
+            <blockquote className="mt-5 rounded-2xl border border-brand/10 bg-brand/5 p-4 text-base italic text-foreground">
+              “{doctor.quote}”
+            </blockquote>
+
+            <p className="mt-5 text-sm leading-6 text-muted-foreground">
+              Dedicated to compassionate, patient-first care with a focus on accurate diagnosis,
+              clear communication, and treatment plans tailored to each individual's needs.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href={`tel:${HOSPITAL.phone}`}
+                className="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-soft"
+              >
+                Book Consultation
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 export default function DoctorsPage() {
-  const mainDoctors = DOCTORS.slice(0, 2);
+  const mainDoctors = DOCTORS;
+  const doctorSchema = {
+    "@context": "https://schema.org",
+    "@graph": DOCTORS.map((doctor) => ({
+      "@type": "Physician",
+      "name": doctor.name,
+      "image": doctor.image,
+      "jobTitle": doctor.speciality,
+      "medicalSpecialty": [doctor.speciality],
+      "description": doctor.quote,
+      "affiliation": {
+        "@type": "Hospital",
+        "name": "Samarpan Hospital Ajmer",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "CP 02, Pushkar Rd, near City Pride Garden, HUD Nagar Extension, Haribhau Upadhyay Nagar Extension",
+          "addressLocality": "Ajmer",
+          "addressRegion": "Rajasthan",
+          "postalCode": "305001",
+          "addressCountry": "IN",
+        },
+      },
+      "areaServed": "Ajmer, Rajasthan",
+      "telephone": "+91-90572-74807",
+      "url": "https://www.samarpanhospitalajmer.in/doctors",
+    })),
+  };
 
   return (
-    <PageLayout testid="doctors-page">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(doctorSchema) }}
+      />
+      <PageLayout testid="doctors-page">
       <PageHero
         crumb="Doctors"
         overline="Our specialists"
@@ -24,7 +146,7 @@ export default function DoctorsPage() {
 
       <section className="py-12 lg:py-20 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 place-items-stretch">
             {mainDoctors.map((d, i) => (
               <motion.article
                 key={d.name}
@@ -32,7 +154,7 @@ export default function DoctorsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.7, delay: i * 0.1 }}
-                className="group w-full sm:w-3/4 md:w-2/3 lg:w-1/2 transform origin-center"
+                className="group w-full transform origin-center"
                 data-testid={`doctor-profile-${i}`}
               >
                 <div className="relative overflow-hidden rounded-3xl aspect-[3/4] lg:aspect-[3/4] bg-pearl">
@@ -68,6 +190,18 @@ export default function DoctorsPage() {
                   <p className="text-sm text-muted-foreground mt-1">
                     {d.qualification}
                   </p>
+                  {d.honor ? (
+                    <div className="mt-2">
+                      <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-800">
+                        {d.honor}
+                      </span>
+                    </div>
+                  ) : null}
+                  {d.timing ? (
+                    <div className="mt-3 text-xs text-foreground/80">
+                      <span className="font-medium text-foreground">Timings:</span> {d.timing}
+                    </div>
+                  ) : null}
                   <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                     <span className="inline-flex items-center gap-2">
                       <Clock3 className="w-4 h-4 text-brand/70" strokeWidth={1.6} />
@@ -78,14 +212,17 @@ export default function DoctorsPage() {
                       Senior Consultant
                     </span>
                   </div>
-                  <a
-                    href={`tel:${HOSPITAL.phone}`}
-                    data-testid={`doctor-book-${i}`}
-                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:text-brand-soft"
-                  >
-                    Book a consultation
-                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
+                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                    <a
+                      href={`tel:${HOSPITAL.phone}`}
+                      data-testid={`doctor-book-${i}`}
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:text-brand-soft"
+                    >
+                      Book a consultation
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                    <DoctorProfileModal doctor={d} />
+                  </div>
                 </div>
               </motion.article>
             ))}
@@ -93,41 +230,7 @@ export default function DoctorsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 lg:py-28 bg-pearl">
-        <div className="mx-auto max-w-5xl px-6 lg:px-10">
-          <div className="relative rounded-[2rem] overflow-hidden bg-brand text-white p-10 lg:p-14">
-            <div className="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-terracotta/30 blur-3xl" />
-            <div className="relative grid lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <Stethoscope className="w-8 h-8 text-terracotta" strokeWidth={1.5} />
-                <p className="mt-5 font-display text-3xl sm:text-4xl font-light leading-tight">
-                  Not sure who to see?
-                </p>
-                <p className="mt-4 text-white/75">
-                  Our care coordinators will match you to the right specialist —
-                  just tell us what's troubling you.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row lg:justify-end gap-4">
-                <a
-                  href={`tel:${HOSPITAL.phone}`}
-                  data-testid="doctors-call-cta"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-terracotta hover:bg-terracotta-deep px-6 py-3.5 text-sm font-medium transition-all hover:-translate-y-0.5"
-                >
-                  Talk to a coordinator
-                </a>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 hover:border-white/60 px-6 py-3.5 text-sm font-medium transition-all"
-                >
-                  Browse specialities
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </PageLayout>
+    </>
   );
 }

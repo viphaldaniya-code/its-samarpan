@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { NAV, HOSPITAL } from "@/data/site";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const contactHref = `${location.pathname}#contact`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -61,7 +63,7 @@ export const Header = () => {
             ) : (
               <a
                 key={n.href}
-                href={n.href}
+                  href={n.label === "Contact" ? contactHref : n.href}
                 data-testid={`nav-${n.label.toLowerCase()}`}
                 className="relative text-sm text-foreground/80 hover:text-foreground transition-colors group"
               >
@@ -117,7 +119,7 @@ export const Header = () => {
                 ) : (
                   <a
                     key={n.href}
-                    href={n.href}
+                    href={n.label === "Contact" ? contactHref : n.href}
                     onClick={() => setOpen(false)}
                     className="text-base text-foreground/85"
                   >

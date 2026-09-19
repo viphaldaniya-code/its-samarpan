@@ -90,11 +90,11 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-4xl px-6 lg:px-10 text-center">
           <Quote className="w-10 h-10 text-terracotta mx-auto" strokeWidth={1.5} />
           <p className="mt-6 font-display text-3xl sm:text-4xl font-light leading-[1.2]">
-            "We never set out to build the biggest hospital. Only the one we
-            would trust with our own family."
+            Leading Neuro, Spine, Trauma & Multi Speciality Hospital in Ajmer,
+            Committed to Better Outcomes for Every Patient.
           </p>
           <p className="mt-8 text-white/70">
-            — The founding physicians of Samarpan
+            — Samarpan Neuro Spine & Multispeciality Hospital
           </p>
           <Link
             to="/services"
