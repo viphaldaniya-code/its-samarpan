@@ -13,7 +13,7 @@ const fadeUp = {
 
 export const Hero = () => {
   return (
-    <section id="top" className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden noise-overlay">
+    <section id="top" className="relative pt-28 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden noise-overlay">
       {/* soft background blobs */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -top-32 -left-24 w-[520px] h-[520px] rounded-full bg-brand/10 blur-3xl" />
@@ -39,7 +39,7 @@ export const Hero = () => {
             initial="hidden"
             animate="show"
             custom={1}
-            className="font-display text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.02] tracking-tight text-foreground"
+            className="font-display text-[2.65rem] sm:text-6xl lg:text-7xl font-light leading-[1.02] tracking-tight text-foreground"
           >
             Samarpan <em className="not-italic font-normal text-brand">Neuro Spine and Multispeciality</em>
             <br />
@@ -51,7 +51,7 @@ export const Hero = () => {
             initial="hidden"
             animate="show"
             custom={2}
-            className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed"
+            className="mt-6 sm:mt-8 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed"
           >
             Samarpan Hospital is one of Ajmer's leading NABH Accredited Multi
             Speciality Hospitals, providing expert Neuro Surgery, Spine Care,
@@ -66,12 +66,12 @@ export const Hero = () => {
             initial="hidden"
             animate="show"
             custom={3}
-            className="mt-10 flex flex-wrap items-center gap-4"
+            className="mt-8 sm:mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4"
           >
             <a
               href="#services"
               data-testid="hero-explore-cta"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand hover:bg-brand-soft text-white px-6 py-3.5 text-sm font-medium transition-all hover:-translate-y-0.5 shadow-sm"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand hover:bg-brand-soft text-white px-6 py-3.5 text-sm font-medium transition-all hover:-translate-y-0.5 shadow-sm"
             >
               Explore our specialities
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -79,7 +79,7 @@ export const Hero = () => {
             <a
               href={`tel:${HOSPITAL.phone}`}
               data-testid="hero-call-cta"
-              className="inline-flex items-center gap-2 rounded-full border border-brand/25 hover:border-brand/50 px-6 py-3.5 text-sm font-medium text-foreground hover:bg-white transition-all"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-brand/25 hover:border-brand/50 px-6 py-3.5 text-sm font-medium text-foreground hover:bg-white transition-all"
             >
               <PhoneCall className="w-4 h-4" /> Talk to a coordinator
             </a>
@@ -90,7 +90,7 @@ export const Hero = () => {
             initial="hidden"
             animate="show"
             custom={4}
-            className="mt-12 flex items-center gap-6 text-sm text-muted-foreground"
+            className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground"
           >
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-brand" strokeWidth={1.6} />
@@ -113,7 +113,7 @@ export const Hero = () => {
             <img
               src="/hero-hospital.jpeg"
               alt="Modern hospital architecture at Samarpan Hospital"
-              className="w-full h-[540px] object-cover"
+              className="w-full h-[380px] sm:h-[540px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/40 via-transparent to-transparent" />
 

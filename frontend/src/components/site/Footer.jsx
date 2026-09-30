@@ -4,7 +4,7 @@ import { NAV, HOSPITAL } from "@/data/site";
 export const Footer = () => {
   return (
     <footer className="relative bg-brand-deep text-white/90">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10 py-14 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
@@ -52,7 +52,7 @@ export const Footer = () => {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.133716060901!2d74.60638013226313!3d26.483639179225218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be7ca9ebd9f93%3A0xa72fc54ad274f055!2sSamarpan%20Neuro%20Spine%20and%20Multispeciality%20Hospital!5e0!3m2!1sen!2sin!4v1787672278208!5m2!1sen!2sin"
                 width="100%"
-                height="220"
+                height="200"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"

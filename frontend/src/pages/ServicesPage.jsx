@@ -43,13 +43,13 @@ function ServiceDoctorModal({ doctor, open, onOpenChange }) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="overflow-hidden p-0 sm:max-w-2xl">
-        <div className="grid gap-0 sm:grid-cols-[220px_1fr]">
-          <div className="bg-pearl">
+      <DialogContent className="p-0 sm:max-w-2xl">
+        <div className="grid max-h-[calc(100dvh-1.5rem)] overflow-y-auto gap-0 sm:grid-cols-[220px_1fr]">
+          <div className="h-44 bg-pearl sm:h-auto sm:min-h-[420px]">
             <img
               src={doctor.image}
               alt={doctor.name}
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full object-contain object-center"
             />
           </div>
 
@@ -87,7 +87,26 @@ function ServiceDoctorModal({ doctor, open, onOpenChange }) {
                   <span>{doctor.timing}</span>
                 </div>
               ) : null}
+              {doctor.training ? (
+                <div className="text-xs text-foreground/80">
+                  <span className="font-medium text-foreground">Training:</span> {doctor.training}
+                </div>
+              ) : null}
             </div>
+
+            {doctor.specialties?.length ? (
+              <div className="mt-5">
+                <h3 className="text-sm font-semibold text-foreground">Specialities</h3>
+                <ul className="mt-2 grid gap-1 text-sm text-muted-foreground sm:grid-cols-2">
+                  {doctor.specialties.map((specialty) => (
+                    <li key={specialty} className="flex gap-2">
+                      <span className="text-brand">•</span>
+                      <span>{specialty}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
 
             <blockquote className="mt-5 rounded-2xl border border-brand/10 bg-brand/5 p-4 text-base italic text-foreground">
               “{doctor.quote}”

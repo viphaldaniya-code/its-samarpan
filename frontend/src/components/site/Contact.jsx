@@ -4,7 +4,7 @@ import { HOSPITAL, ACCREDITATIONS } from "@/data/site";
 
 export const Contact = () => {
   return (
-    <section id="contact" className="relative py-24 lg:py-32 bg-white">
+    <section id="contact" className="relative py-16 sm:py-24 lg:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Left: heading + info */}
@@ -23,7 +23,7 @@ export const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="mt-5 font-display text-4xl sm:text-5xl font-light leading-[1.05] text-foreground"
+              className="mt-5 font-display text-3xl sm:text-5xl font-light leading-[1.05] text-foreground"
             >
               Come by.
               <br />
@@ -31,7 +31,7 @@ export const Contact = () => {
               <em className="not-italic text-brand">answer within three rings.</em>
             </motion.h2>
 
-            <div className="mt-10 grid sm:grid-cols-2 gap-5">
+            <div className="mt-8 sm:mt-10 grid sm:grid-cols-2 gap-4 sm:gap-5">
               <InfoCard
                 icon={<MapPin className="w-5 h-5" strokeWidth={1.6} />}
                 title="Visit"
@@ -66,7 +66,7 @@ export const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.9 }}
-              className="relative rounded-[2rem] overflow-hidden bg-brand text-white p-10 shadow-xl"
+              className="relative rounded-[2rem] overflow-hidden bg-brand text-white p-6 sm:p-10 shadow-xl"
             >
               <div className="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-terracotta/30 blur-3xl" />
               <div className="relative">
@@ -74,7 +74,7 @@ export const Contact = () => {
                   <Siren className="w-4 h-4" strokeWidth={1.6} />
                   Emergency · 24 × 7
                 </div>
-                <p className="mt-6 font-display text-3xl sm:text-4xl leading-tight">
+                <p className="mt-6 font-display text-2xl sm:text-4xl leading-tight">
                   For life-threatening emergencies,
                   <br />
                   call our red line directly.
@@ -82,7 +82,7 @@ export const Contact = () => {
                 <a
                   href={`tel:${HOSPITAL.emergency}`}
                   data-testid="emergency-call-button"
-                  className="mt-8 inline-flex items-center gap-3 rounded-full bg-terracotta hover:bg-terracotta-deep px-6 py-4 text-lg font-medium transition-all hover:-translate-y-0.5"
+                  className="mt-8 inline-flex items-center justify-center gap-3 rounded-full bg-terracotta hover:bg-terracotta-deep px-5 py-3.5 text-base sm:text-lg font-medium transition-all hover:-translate-y-0.5"
                 >
                   <Phone className="w-5 h-5" />
                   {HOSPITAL.emergency}

@@ -43,6 +43,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-feature-settings: "ss01", "cv11";
+        overflow-x: hidden;
     }
     h1, h2, h3, h4, h5, h6, .font-display {
         font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
@@ -51,6 +52,21 @@
     ::selection {
         background: #2C5E5E;
         color: #fff;
+    }
+}
+
+@media (max-width: 640px) {
+    .overline {
+        letter-spacing: 0.16em;
+        font-size: 0.64rem;
+    }
+
+    .prose,
+    p,
+    li,
+    a,
+    button {
+        overflow-wrap: anywhere;
     }
 }
 

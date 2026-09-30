@@ -16,7 +16,7 @@ export const HOSPITAL = {
   phoneAlt: "+91 63760 12431",
   phones: ["+91 90572 74807", "+91 63760 12431"],
   emergency: "+91 90572 74807",
-  email: "hello@samarpanhospital.in",
+  email: "Samarpanhospital01@gmail.com",
   opd: "OPD: 10:00 AM – 2:00 PM & 6:00 PM – 8:00 PM",
   hours: "OPD: 10:00 AM – 2:00 PM & 6:00 PM – 8:00 PM · Emergency: Open 24×7",
 };
@@ -78,6 +78,13 @@ export const SERVICES = [
     body: "Expert care for pregnancy, childbirth, infertility, women's wellness and advanced gynecological procedures.",
     icon: "Flower2",
   },
+  {
+    key: "urology",
+    title: "Urology",
+    tag: "Urinary Health",
+    body: "Diagnosis and treatment for urinary tract, kidney, bladder and men’s urological conditions.",
+    icon: "Stethoscope",
+  },
 ];
 
 export const STATS = [
@@ -94,7 +101,15 @@ export const DOCTORS = [
     qualification: "MBBS, Specialization in Critical Care",
     quote: "The heart heals faster when the human behind it is heard.",
     years: "5+ yrs",
-    timing: "09:00 AM – 11:00 AM; 06:00 PM – 08:00 PM",
+    timing: "10:00 AM – 03:00 PM; 06:00 PM – 08:00 PM",
+    specialties: [
+      "Critical Care Management",
+      "ICU Management",
+      "Emergency Critical Care",
+      "Ventilator Management",
+      "Sepsis Management",
+      "Multiorgan Failure Management",
+    ],
     image:
       "/ChatGPT Image Jul 19, 2026, 11_01_42 PM.png",
   },
@@ -103,9 +118,18 @@ export const DOCTORS = [
     speciality: "Neuro & Spine Surgeon",
     qualification: "MBBS, MS, MCH",
     quote: "Every minute matters — so does every question you have.",
-    years: "9+ yrs",
+    years: "15+ yrs",
     honor: "Gold Medalist",
-    timing: "10:00 AM – 01:00 PM; 05:00 PM – 07:00 PM",
+    timing: "10:00 AM – 03:00 PM; 06:00 PM – 08:00 PM",
+    training: "Delhi AIIMS · Subdergen Hospital, New Delhi",
+    specialties: [
+      "Brain Tumor Surgery",
+      "Brain Trauma Surgery",
+      "Complex Brain Surgery",
+      "Spine Surgery",
+      "Spinal Disc Treatment",
+      "Craniovertebral Junction Surgery",
+    ],
     image:
       "/ChatGPT Image Jul 19, 2026, 11_05_51 PM.png",
   },
@@ -116,7 +140,15 @@ export const DOCTORS = [
     quote: "Thoughtful care and clear guidance help patients feel safe and heard.",
     years: "3 yrs",
     honor: "Gold Medalist",
-    timing: "09:30 AM – 12:30 PM; 06:30 PM – 08:00 PM",
+    timing: "10:00 AM – 05:00 PM",
+    specialties: [
+      "Diabetes Management",
+      "Hypertension Management",
+      "General Medicine",
+      "Fever & Infection Treatment",
+      "Thyroid Disorder Management",
+      "Respiratory Disease Treatment",
+    ],
     image: "/ChatGPT Image Aug 4, 2026, 10_30_59 PM.png",
   },
   {
@@ -126,6 +158,14 @@ export const DOCTORS = [
     quote: "Clear hearing and breathing care can transform everyday life.",
     years: "9+ yrs",
     timing: "09:00 AM – 11:00 AM; 06:00 PM – 08:00 PM",
+    specialties: [
+      "Ear Surgery",
+      "Sinus Surgery",
+      "Hearing Loss Treatment",
+      "Tonsil & Adenoid Treatment",
+      "Nasal Allergy Treatment",
+      "Vertigo & Balance Disorders",
+    ],
     image: "/galary/ChatGPT Image Sep 18, 2026, 11_42_44 PM.png",
   },
   {
@@ -135,6 +175,14 @@ export const DOCTORS = [
     quote: "Careful surgical planning leads to better outcomes and faster recovery.",
     years: "12+ yrs",
     timing: "11:00 AM – 02:00 PM; 04:00 PM – 06:00 PM",
+    specialties: [
+      "Laparoscopic Surgery",
+      "Hernia Surgery",
+      "Gallbladder Surgery",
+      "Appendix Surgery",
+      "Piles Surgery",
+      "Fissure & Fistula Treatment",
+    ],
     image: "/galary/ChatGPT Image Sep 18, 2026, 10_59_45 PM.png",
   },
   {
@@ -146,6 +194,14 @@ export const DOCTORS = [
     honor: "Gold Medalist",
     timing: "10:00 AM – 01:00 PM; 05:00 PM – 07:00 PM",
     focus: "Trauma Specialist · Ligament Tear Care · Ilizarov",
+    specialties: [
+      "Ilizarov Surgery",
+      "Limb Lengthening & Deformity Correction",
+      "Complex Fracture Management",
+      "Knee & Hip Replacement",
+      "Clubfoot (CTEV) Treatment",
+      "Arthroscopic Surgery (ACL/PCL Reconstruction)",
+    ],
     image: "/galary/ChatGPT Image Sep 18, 2026, 11_39_45 PM.png",
   },
 ];
