@@ -19,6 +19,51 @@ import GalleryPage from "@/pages/GalleryPage";
 import BlogListPage from "@/pages/BlogListPage";
 import BlogPostPage from "@/pages/BlogPostPage";
 import { Toaster } from "sonner";
+import { useEffect, useState } from "react";
+
+function LoadingScreen() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    let loadingTimer;
+    const finishLoading = () => setIsLoading(false);
+
+    if (document.readyState === "complete") {
+      loadingTimer = window.setTimeout(finishLoading, 500);
+    } else {
+      window.addEventListener("load", finishLoading, { once: true });
+    }
+
+    loadingTimer = window.setTimeout(finishLoading, 10_000);
+
+    return () => {
+      window.removeEventListener("load", finishLoading);
+      window.clearTimeout(loadingTimer);
+    };
+  }, []);
+
+  if (!isLoading) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-pearl/90 px-6 backdrop-blur-md">
+      <div className="flex flex-col items-center text-center">
+        <div className="loading-logo-shell">
+          <img
+            src="/samarpan-logo.webp"
+            alt="Samarpan Hospital"
+            className="h-24 w-auto object-contain sm:h-28"
+          />
+        </div>
+        <p className="mt-6 max-w-xs text-center text-xs font-medium uppercase tracking-[0.16em] text-brand sm:max-w-md">
+          Best NeuroSpine and Multispecility Hospital in Ajmer
+        </p>
+        <div className="mt-4 h-1 w-32 overflow-hidden rounded-full bg-brand/10">
+          <div className="loading-progress h-full rounded-full bg-brand" />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const HomePage = () => (
   <SmoothScroll>
@@ -42,6 +87,7 @@ const HomePage = () => (
 function App() {
   return (
     <div className="App">
+      <LoadingScreen />
       <BrowserRouter>
         <ScrollToTop />
         <Routes>

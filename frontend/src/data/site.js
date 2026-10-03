@@ -96,24 +96,6 @@ export const STATS = [
 
 export const DOCTORS = [
   {
-    name: "Dr. Sarvan Yadav",
-    speciality: "Critical Care",
-    qualification: "MBBS, Specialization in Critical Care",
-    quote: "The heart heals faster when the human behind it is heard.",
-    years: "5+ yrs",
-    timing: "10:00 AM – 03:00 PM; 06:00 PM – 08:00 PM",
-    specialties: [
-      "Critical Care Management",
-      "ICU Management",
-      "Emergency Critical Care",
-      "Ventilator Management",
-      "Sepsis Management",
-      "Multiorgan Failure Management",
-    ],
-    image:
-      "/ChatGPT Image Jul 19, 2026, 11_01_42 PM.png",
-  },
-  {
     name: "Dr. Praveen Kumar Gupta",
     speciality: "Neuro & Spine Surgeon",
     qualification: "MBBS, MS, MCH",
@@ -132,6 +114,24 @@ export const DOCTORS = [
     ],
     image:
       "/ChatGPT Image Jul 19, 2026, 11_05_51 PM.png",
+  },
+  {
+    name: "Dr. Sarvan Yadav",
+    speciality: "Critical Care",
+    qualification: "MBBS, Specialization in Critical Care",
+    quote: "The heart heals faster when the human behind it is heard.",
+    years: "5+ yrs",
+    timing: "10:00 AM – 03:00 PM; 06:00 PM – 08:00 PM",
+    specialties: [
+      "Critical Care Management",
+      "ICU Management",
+      "Emergency Critical Care",
+      "Ventilator Management",
+      "Sepsis Management",
+      "Multiorgan Failure Management",
+    ],
+    image:
+      "/ChatGPT Image Jul 19, 2026, 11_01_42 PM.png",
   },
   {
     name: "Dr Vijay Lakshmi",

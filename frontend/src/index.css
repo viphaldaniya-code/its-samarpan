@@ -121,6 +121,21 @@
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-14px); }
     }
+    .loading-logo-shell {
+        animation: loadingLogoPulse 1.8s ease-in-out infinite;
+    }
+    .loading-progress {
+        animation: loadingProgress 1.5s ease-in-out infinite;
+    }
+    @keyframes loadingLogoPulse {
+        0%, 100% { opacity: 0.72; transform: scale(0.96); }
+        50% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes loadingProgress {
+        0% { transform: translateX(-100%); }
+        55% { transform: translateX(20%); }
+        100% { transform: translateX(210%); }
+    }
 }
 
 [data-debug-wrapper="true"] { display: contents !important; }
